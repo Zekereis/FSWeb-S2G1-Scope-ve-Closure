@@ -64,9 +64,12 @@ Aşağıdaki takimSkoru() fonksiyonununda aşağıdakileri yapınız:
 Not: Bu fonskiyon, aşağıdaki diğer görevler için de bir callback fonksiyonu olarak da kullanılacak
 */
 
-function takimSkoru(/*Kodunuzu buraya yazınız*/){
-    /*Kodunuzu buraya yazınız*/
+function takimSkoru(){
+    let skor = Math.floor(Math.random()*16) + 10;
+    return skor;
 }
+
+console.log(takimSkoru());
 
 
 
@@ -86,9 +89,24 @@ Aşağıdaki macSonucu() fonksiyonununda aşağıdakileri yapınız:
 }
 */ 
 
-function macSonucu(/*Kodunuzu buraya yazınız*/){
-  /*Kodunuzu buraya yazınız*/
+function macSonucu(callback, ceyrekSayisi){
+  let evSahibi = 0;
+  let konukTakim = 0;
+
+  for(let i = 1; i<=ceyrekSayisi; i++){
+    evSahibi += callback();
+    konukTakim += callback();
+  }
+
+  let skor = {};
+  skor.EvSahibi = evSahibi;
+  skor['konukTakim'] = konukTakim;
+
+  return skor;
+
 }
+
+console.log(macSonucu(takimSkoru,4));
 
 
 
