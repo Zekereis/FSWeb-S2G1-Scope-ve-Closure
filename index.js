@@ -100,7 +100,7 @@ function macSonucu(callback, ceyrekSayisi){
 
   let skor = {};
   skor.EvSahibi = evSahibi;
-  skor['konukTakim'] = konukTakim;
+  skor['KonukTakim'] = konukTakim;  //Furkan İşlek
 
   return skor;
 
@@ -127,10 +127,14 @@ Aşağıdaki periyotSkoru() fonksiyonununda aşağıdakileri yapınız:
   */
 
 
-function periyotSkoru(/*Kodunuzu buraya yazınız*/) {
-  /*Kodunuzu buraya yazınız*/
+function periyotSkoru(callback) {
+  const obje = {};
+  obje.EvSahibi += callback();
+  obje.KonukTakim += callback();
+  return obje;
 
 }
+ console.log(periyotSkoru(takimSkoru))
 
 
 /* Zorlayıcı Görev 5: skorTabelasi() 
